@@ -7,24 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class First {
-    String BASEURL = "http://opencart.abstracta.us/";
-    WebDriver driver;
-
-    @BeforeEach
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
-
+public class First extends TestBase{
     @Test
     public void test1() {
-        driver.get(BASEURL);
-    }
-    @AfterEach
-    public void closeDriver() {
-        driver.quit();
+
     }
 }
