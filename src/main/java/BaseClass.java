@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class BaseClass {
     public WebDriver driver;
     public WebDriverWait wait;
@@ -14,15 +16,21 @@ public class BaseClass {
         this.driver = driver;
         wait =  new WebDriverWait(driver, 15);
     }
-    public void waitVisibilityElement(By elementBy) {
+    public void waitVisibility(By elementBy) {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elementBy));
     }
     public void clickOnElement(By elementBy) {
+        waitVisibility(elementBy);
         driver.findElement(elementBy).click();
 
     }
     public void sendCaseText(By elementBy, String text) {
+        waitVisibility(elementBy);
         driver.findElement(elementBy).sendKeys(text);
+    }
+    public void isElementPresent(By elementBy) {
+        waitVisibility(elementBy);
+        assertTrue(driver.findElement(elementBy).isDisplayed());
     }
 }
 
