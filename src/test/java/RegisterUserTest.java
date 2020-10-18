@@ -7,9 +7,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class First extends TestBase{
+public class RegisterUserTest extends TestBase{
     @Test
     public void test1() {
-
+        main.openPage()
+            .openMenu()
+            .clickOnRegisterButton();
+        safetyPage.clickOnAdvancedButton()
+                  .clickOnProceedLink();
+        registerForm.fillFirstName()
+                    .fillLastName()
+                    .fillEmail();
     }
 }
