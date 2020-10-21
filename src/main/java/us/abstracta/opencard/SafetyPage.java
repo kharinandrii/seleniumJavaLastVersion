@@ -1,3 +1,5 @@
+package us.abstracta.opencard;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

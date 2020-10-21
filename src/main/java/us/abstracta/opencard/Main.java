@@ -1,7 +1,9 @@
+package us.abstracta.opencard;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Main extends BaseClass{
+public class Main extends BaseClass {
     private By myAccount = By.xpath("//span[text()='My Account']");
     private By registerButton = By.xpath("//*[text()='Register']");
 
