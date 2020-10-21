@@ -7,7 +7,8 @@ import com.github.javafaker.Faker;
 
 import java.util.Locale;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertTrue;
+
 
 public class BaseClass {
     public WebDriver driver;

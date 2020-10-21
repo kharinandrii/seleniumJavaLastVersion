@@ -1,9 +1,9 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +14,7 @@ public class TestBase {
     public SafetyPage safetyPage;
     public RegisterForm registerForm;
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -27,7 +27,7 @@ public class TestBase {
     }
 
 
-    @AfterEach
+    @AfterMethod
     public void closeDriver() {
         driver.quit();
     }
