@@ -4,6 +4,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import us.abstracta.opencard.Main;
+import us.abstracta.opencard.RegisterForm;
+import us.abstracta.opencard.SafetyPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +17,7 @@ public class TestBase {
     public SafetyPage safetyPage;
     public RegisterForm registerForm;
 
+
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -21,9 +25,8 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         main = PageFactory.initElements(driver, Main.class);
-        safetyPage = PageFactory.initElements(driver,SafetyPage.class);
+        safetyPage = PageFactory.initElements(driver, SafetyPage.class);
         registerForm = PageFactory.initElements(driver, RegisterForm.class);
-
     }
 
 

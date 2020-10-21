@@ -1,20 +1,14 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import us.abstracta.opencard.RegisterData;
 
-import java.util.concurrent.TimeUnit;
-
-public class RegisterUserTest extends TestBase{
+public class RegisterUserTest extends TestBase {
     @Test
     public void test1() {
         main.openPage()
-            .openMenu()
-            .clickOnRegisterButton();
+                .openMenu()
+                .clickOnRegisterButton();
         safetyPage.clickOnAdvancedButton()
-                  .clickOnProceedLink();
-        registerForm.fillFirstName()
-                    .fillLastName()
-                    .fillEmail();
+                .clickOnProceedLink();
+        registerForm.fillRegisterForm(new RegisterData("Kherson", "730270", "220", "3487", "demo1234"));
     }
 }
