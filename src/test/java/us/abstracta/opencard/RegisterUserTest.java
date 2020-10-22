@@ -1,5 +1,7 @@
+package us.abstracta.opencard;
+
 import org.testng.annotations.Test;
-import us.abstracta.opencard.RegisterData;
+import us.abstracta.opencard.Data.RegisterData;
 
 public class RegisterUserTest extends TestBase {
     @Test

@@ -2,6 +2,7 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import us.abstracta.opencard.Data.RegisterData;
 
 public class RegisterForm extends BaseClass {
     private By firstNameField = By.xpath("//*[@id='input-firstname']");

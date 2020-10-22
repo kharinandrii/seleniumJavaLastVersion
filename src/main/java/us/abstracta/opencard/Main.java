@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class Main extends BaseClass {
     private By myAccount = By.xpath("//span[text()='My Account']");
     private By registerButton = By.xpath("//*[text()='Register']");
+    private By loginButton = By.xpath("//*[text() = 'Login']");
 
     public Main(WebDriver driver) {
         super(driver);
@@ -27,5 +28,9 @@ public class Main extends BaseClass {
         clickOnElement(registerButton);
         return this;
     }
-
+    public Main clickOnLoginButton() {
+        isElementPresent(loginButton);
+        clickOnElement(loginButton);
+        return this;
+    }
 }

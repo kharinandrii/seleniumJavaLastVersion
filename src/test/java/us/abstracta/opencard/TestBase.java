@@ -1,12 +1,12 @@
+package us.abstracta.opencard;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import us.abstracta.opencard.Main;
-import us.abstracta.opencard.RegisterForm;
-import us.abstracta.opencard.SafetyPage;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +16,7 @@ public class TestBase {
     public Main main;
     public SafetyPage safetyPage;
     public RegisterForm registerForm;
+    public LoginForm loginForm;
 
 
     @BeforeMethod
@@ -27,6 +28,7 @@ public class TestBase {
         main = PageFactory.initElements(driver, Main.class);
         safetyPage = PageFactory.initElements(driver, SafetyPage.class);
         registerForm = PageFactory.initElements(driver, RegisterForm.class);
+        loginForm = PageFactory.initElements(driver, LoginForm.class);
     }
 
 
