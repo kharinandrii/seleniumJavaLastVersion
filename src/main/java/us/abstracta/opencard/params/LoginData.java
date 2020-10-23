@@ -1,4 +1,4 @@
-package us.abstracta.opencard.Data;
+package us.abstracta.opencard.params;
 
 public class LoginData {
     private final String email;
@@ -16,4 +16,6 @@ public class LoginData {
     public String getPassword() {
         return password;
     }
+
+
 }

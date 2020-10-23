@@ -2,7 +2,10 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import us.abstracta.opencard.Data.RegisterData;
+import us.abstracta.opencard.params.Params;
+import us.abstracta.opencard.params.RegisterData;
+
+import static java.lang.Thread.sleep;
 
 public class RegisterForm extends BaseClass {
     private By firstNameField = By.xpath("//*[@id='input-firstname']");
@@ -18,68 +21,70 @@ public class RegisterForm extends BaseClass {
     private By passwordConfirmField = By.xpath("//*[@id='input-confirm']");
     private By checkbox = By.xpath("//*[@name='agree']");
     private By buttonRegister = By.xpath("//*[@value='Continue']");
+    Params params = new Params();
 
     public RegisterForm(WebDriver driver) {
         super(driver);
     }
 
-    public RegisterForm fillFirstName(String name) {
-        sendCaseText(firstNameField, name);
+    public RegisterForm fillFirstName() {
+        sendCaseText(firstNameField, getRandomFirstName());
         return this;
     }
 
-    public RegisterForm fillLastName(String lastName) {
-        sendCaseText(lastNameField, lastName);
+    public RegisterForm fillLastName() {
+        sendCaseText(lastNameField, getRandomLastName());
         return this;
     }
 
-    public RegisterForm fillEmail(String email) {
-        sendCaseText(emailField, email);
+    public RegisterForm fillEmail() {
+        sendCaseText(emailField, getRandomMail());
         return this;
     }
 
-    public RegisterForm fillPhoneNumber(String phone) {
-        sendCaseText(phoneField, phone);
+    public RegisterForm fillPhoneNumber() {
+        sendCaseText(phoneField, getRandomPhone());
         return this;
     }
 
-    public RegisterForm fillAddress(String address) {
-        sendCaseText(addressField, address);
+    public RegisterForm fillAddress() {
+        sendCaseText(addressField, getRandomAddress());
         return this;
     }
 
-    public RegisterForm fillCity(String city) {
-        sendCaseText(cityField, city);
+    public RegisterForm fillCity() {
+        sendCaseText(cityField, params.registerCity);
         return this;
     }
 
-    public RegisterForm fillPostCode(String postcode) {
-        sendCaseText(postcodeField, postcode);
+    public RegisterForm fillPostCode() {
+        sendCaseText(postcodeField, params.postCode);
         return this;
     }
 
-    public RegisterForm chooseCountry(String countyValue) {
-        selectInDrobdown(countrySelect, countyValue);
+    public RegisterForm chooseCountry() {
+        selectInDrobdown(countrySelect, params.registerCountryValue);
         return this;
     }
 
-    public RegisterForm chooseRegion(String regionValue) {
-        selectInDrobdown(regionSelect, regionValue);
+    public RegisterForm chooseRegion() {
+        selectInDrobdown(regionSelect, params.registerRegionValue);
         return this;
     }
 
-    public RegisterForm fillPassword(String password) {
-        sendCaseText(passwordField, password);
+    public RegisterForm fillPassword() {
+        sendCaseText(passwordField, params.password);
         return this;
     }
 
-    public RegisterForm fillPasswordConfirm(String password) {
-        sendCaseText(passwordConfirmField, password);
+    public RegisterForm fillPasswordConfirm() {
+        sendCaseText(passwordConfirmField, params.password);
         return this;
     }
 
     public RegisterForm clickOnCheckbox() {
         clickOnElement(checkbox);
+        elementIsSelected(checkbox);
         return this;
     }
 
@@ -87,22 +92,5 @@ public class RegisterForm extends BaseClass {
         clickOnElement(buttonRegister);
         return this;
     }
-
-    public void fillRegisterForm(RegisterData registerData) {
-        this.fillFirstName(getRandomFirstName());
-        this.fillLastName(getRandomLastName());
-        this.fillEmail(getRandomMail());
-        this.fillPhoneNumber(getRandomPhone());
-        this.fillAddress(getRandomAddress());
-        this.fillCity(registerData.getCity());
-        this.fillPostCode(registerData.getPostcode());
-        this.chooseCountry(registerData.getCountry());
-        this.chooseRegion(registerData.getRegion());
-        this.fillPassword(registerData.getPassword());
-        this.fillPasswordConfirm(registerData.getPassword());
-        this.clickOnCheckbox();
-        this.clickOnButton();
-    }
-
 }
 //TODO add hashmap for save user data and check this data

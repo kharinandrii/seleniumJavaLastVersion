@@ -1,16 +1,29 @@
 package us.abstracta.opencard;
 
 import org.testng.annotations.Test;
-import us.abstracta.opencard.Data.RegisterData;
+import us.abstracta.opencard.params.RegisterData;
 
 public class RegisterUserTest extends TestBase {
     @Test
-    public void test1() {
+    public void test1() throws InterruptedException {
         main.openPage()
                 .openMenu()
                 .clickOnRegisterButton();
         safetyPage.clickOnAdvancedButton()
                 .clickOnProceedLink();
-        registerForm.fillRegisterForm(new RegisterData("Kherson", "730270", "220", "3487", "demo1234"));
+        registerForm.fillFirstName()
+                .fillLastName()
+                .fillEmail()
+                .fillPhoneNumber()
+                .fillAddress()
+                .fillCity()
+                .fillPostCode()
+                .chooseCountry()
+                .chooseRegion()
+                .fillPassword()
+                .fillPasswordConfirm()
+                .clickOnCheckbox()
+                .clickOnButton();
+        successPage.checkSuccessMessage();
     }
 }

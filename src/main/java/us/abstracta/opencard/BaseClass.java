@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
+import org.testng.Assert;
 
 
 import java.util.Locale;
@@ -50,30 +51,39 @@ public class BaseClass {
     }
 
     public String getRandomFirstName() {
-        String firstName;
-        return firstName = faker.name().firstName();
+
+        return faker.name().firstName();
     }
 
     public String getRandomLastName() {
-        String lastName;
-        return lastName = faker.name().lastName();
+        return  faker.name().lastName();
     }
 
     public String getRandomMail() {
-        String email;
-        return email = faker.funnyName() + "@test.uk";
+        return  faker.animal().name() + "@test.uk";
     }
 
     public String getRandomPhone() {
-        String phone;
-        return phone = String.valueOf(faker.phoneNumber());
+        return  faker.number().digits(8);
     }
 
     public String getRandomAddress() {
-        String address;
-        return address = faker.address().streetAddress();
+
+        return faker.address().streetAddress();
     }
 
+    public void elementIsSelected(By elementBy) {
+        Assert.assertTrue(driver.findElement(elementBy).isSelected());
+    }
+
+    public void equalsText(By elementBy, String expectedText) {
+        String actualText = driver.findElement(elementBy).getText();
+        Assert.assertEquals(actualText, expectedText);
+    }
 
 }
 
+
+
+//TODO watch selenium-real-time-examplesinterview-questions/08 Selenium Webdriver-Techniques to automate Web elements
+// ->

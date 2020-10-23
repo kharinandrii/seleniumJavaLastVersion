@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import us.abstracta.opencard.params.Params;
 
 
 import java.util.concurrent.TimeUnit;
@@ -17,6 +18,8 @@ public class TestBase {
     public SafetyPage safetyPage;
     public RegisterForm registerForm;
     public LoginForm loginForm;
+    public Params params;
+    public SuccessPage successPage;
 
 
     @BeforeMethod
@@ -29,6 +32,8 @@ public class TestBase {
         safetyPage = PageFactory.initElements(driver, SafetyPage.class);
         registerForm = PageFactory.initElements(driver, RegisterForm.class);
         loginForm = PageFactory.initElements(driver, LoginForm.class);
+        params = PageFactory.initElements(driver, Params.class);
+        successPage = PageFactory.initElements(driver, SuccessPage.class);
     }
 
 

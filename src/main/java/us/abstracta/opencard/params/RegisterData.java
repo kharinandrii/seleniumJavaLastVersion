@@ -1,4 +1,4 @@
-package us.abstracta.opencard.Data;
+package us.abstracta.opencard.params;
 
 public class RegisterData {
     private final String city;

@@ -2,7 +2,7 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import us.abstracta.opencard.Data.LoginData;
+import us.abstracta.opencard.params.LoginData;
 
 public class LoginForm extends BaseClass {
     private By emailField = By.xpath("//*[@id='input-email']");
