@@ -1,7 +1,7 @@
 package us.abstracta.opencard;
 
 import org.testng.annotations.Test;
-import us.abstracta.opencard.params.LoginData;
+import us.abstracta.opencard.params.HashData;
 
 public class UserLogin extends TestBase{
     @Test
@@ -9,6 +9,6 @@ public class UserLogin extends TestBase{
         main.openPage()
                 .openMenu()
                 .clickOnLoginButton();
-        loginForm.userLogIn(new LoginData("admin", "demo1234"));
+
     }
 }

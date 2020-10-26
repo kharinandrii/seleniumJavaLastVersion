@@ -37,6 +37,7 @@ public class BaseClass {
 
     public void sendCaseText(By elementBy, String text) {
         waitVisibility(elementBy);
+        driver.findElement(elementBy).clear();
         driver.findElement(elementBy).sendKeys(text);
     }
 
@@ -79,6 +80,18 @@ public class BaseClass {
     public void equalsText(By elementBy, String expectedText) {
         String actualText = driver.findElement(elementBy).getText();
         Assert.assertEquals(actualText, expectedText);
+    }
+
+    public void elementIsEnebled(By elementBy) {
+        Assert.assertTrue(driver.findElement(elementBy).isEnabled());
+    }
+
+    public void elementIsDesebled(By elementBy) {
+        Assert.assertTrue(driver.findElement(elementBy).isDisplayed());
+    }
+
+    public String getText(By elementBy) {
+        return  driver.findElement(elementBy).getText();
     }
 
 }
