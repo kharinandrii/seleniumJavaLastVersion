@@ -6,6 +6,5 @@ public class Params {
     final public String registerCountryValue = "220";
     final public String registerRegionValue = "3487";
     final public String password = "demo1234";
-    final public String login = "admin";
     final public String postCode = "73020";
 }

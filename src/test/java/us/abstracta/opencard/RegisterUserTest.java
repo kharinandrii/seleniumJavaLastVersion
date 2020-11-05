@@ -1,7 +1,6 @@
 package us.abstracta.opencard;
 
 import org.testng.annotations.Test;
-import us.abstracta.opencard.params.RegisterData;
 
 public class RegisterUserTest extends TestBase {
     @Test
@@ -22,8 +21,23 @@ public class RegisterUserTest extends TestBase {
                 .chooseRegion()
                 .fillPassword()
                 .fillPasswordConfirm()
+                .checkDesebledButton()
                 .clickOnCheckbox()
+                .checkEnebledButton()
                 .clickOnButton();
-        successPage.checkSuccessMessage();
+        successPage.checkSuccessMessage()
+                .clickOnContactLink();
+        contactForm.fillNameField()
+                .fillEmailField()
+                .fillTextArea("hello world")
+                .clickOnButton();
+        main.openPage()
+                .openMenu()
+                .clickOnLogout()
+                .openMenu()
+                .clickOnLoginButton();
+        loginForm.fillEmail()
+                .fillPassword("demo1234")
+                .clickOnButton();
     }
 }

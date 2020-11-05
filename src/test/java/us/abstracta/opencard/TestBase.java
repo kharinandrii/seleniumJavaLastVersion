@@ -20,6 +20,7 @@ public class TestBase {
     public LoginForm loginForm;
     public Params params;
     public SuccessPage successPage;
+    public  ContactForm contactForm;
 
 
     @BeforeMethod
@@ -34,6 +35,7 @@ public class TestBase {
         loginForm = PageFactory.initElements(driver, LoginForm.class);
         params = PageFactory.initElements(driver, Params.class);
         successPage = PageFactory.initElements(driver, SuccessPage.class);
+        contactForm = PageFactory.initElements(driver, ContactForm.class);
     }
 
 

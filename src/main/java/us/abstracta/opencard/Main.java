@@ -7,7 +7,7 @@ public class Main extends BaseClass {
     private By myAccount = By.xpath("//span[text()='My Account']");
     private By registerButton = By.xpath("//*[text()='Register']");
     private By loginButton = By.xpath("//*[text() = 'Login']");
-
+    private By logOut = By.xpath("//*[text()='Logout']");
     public Main(WebDriver driver) {
         super(driver);
     }
@@ -31,6 +31,11 @@ public class Main extends BaseClass {
     public Main clickOnLoginButton() {
         isElementPresent(loginButton);
         clickOnElement(loginButton);
+        return this;
+    }
+
+    public Main clickOnLogout() {
+        clickOnElement(logOut);
         return this;
     }
 }

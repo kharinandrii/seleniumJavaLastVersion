@@ -2,10 +2,8 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import us.abstracta.opencard.params.HashData;
 import us.abstracta.opencard.params.Params;
-import us.abstracta.opencard.params.RegisterData;
-
-import static java.lang.Thread.sleep;
 
 public class RegisterForm extends BaseClass {
     private By firstNameField = By.xpath("//*[@id='input-firstname']");
@@ -22,13 +20,16 @@ public class RegisterForm extends BaseClass {
     private By checkbox = By.xpath("//*[@name='agree']");
     private By buttonRegister = By.xpath("//*[@value='Continue']");
     Params params = new Params();
+    HashData hashData = new HashData();
 
     public RegisterForm(WebDriver driver) {
         super(driver);
     }
 
     public RegisterForm fillFirstName() {
-        sendCaseText(firstNameField, getRandomFirstName());
+        String name = getRandomFirstName();
+        sendCaseText(firstNameField, name);
+        hashData.putValue("name", name);
         return this;
     }
 
@@ -38,7 +39,10 @@ public class RegisterForm extends BaseClass {
     }
 
     public RegisterForm fillEmail() {
-        sendCaseText(emailField, getRandomMail());
+        String email = getRandomMail();
+        sendCaseText(emailField, email);
+        hashData.clearData()
+                .putValue("email", email);
         return this;
     }
 
@@ -82,9 +86,18 @@ public class RegisterForm extends BaseClass {
         return this;
     }
 
+    public RegisterForm checkDesebledButton() {
+        elementIsDesebled(buttonRegister);
+        return this;
+    }
+
     public RegisterForm clickOnCheckbox() {
         clickOnElement(checkbox);
         elementIsSelected(checkbox);
+        return this;
+    }
+    public RegisterForm checkEnebledButton() {
+        elementIsEnebled(buttonRegister);
         return this;
     }
 
