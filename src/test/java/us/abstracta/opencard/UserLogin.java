@@ -1,7 +1,6 @@
 package us.abstracta.opencard;
 
 import org.testng.annotations.Test;
-import us.abstracta.opencard.params.HashData;
 
 public class UserLogin extends TestBase{
     @Test

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class RegisterUserTest extends TestBase {
     @Test
-    public void test1() throws InterruptedException {
+    public void test1() {
         main.openPage()
                 .openMenu()
                 .clickOnRegisterButton();

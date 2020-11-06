@@ -9,6 +9,7 @@ import com.github.javafaker.Faker;
 import org.testng.Assert;
 
 
+import java.util.HashMap;
 import java.util.Locale;
 
 import static org.testng.Assert.assertTrue;
@@ -19,6 +20,7 @@ public class BaseClass {
     public WebDriverWait wait;
     protected String BASEURL = "http://opencart.abstracta.us/";
     final Faker faker = new Faker(new Locale("en"));
+    public static HashMap<String, String> myMap = new HashMap<String, String>();
 
     public BaseClass(WebDriver driver) {
         this.driver = driver;
@@ -60,10 +62,6 @@ public class BaseClass {
         return  faker.name().lastName();
     }
 
-    public String getRandomMail() {
-        return  faker.animal().name() + "@test.uk";
-    }
-
     public String getRandomPhone() {
         return  faker.number().digits(8);
     }
@@ -99,4 +97,4 @@ public class BaseClass {
 
 
 //TODO watch selenium-real-time-examplesinterview-questions/08 Selenium Webdriver-Techniques to automate Web elements
-// ->
+// -> разобраться с реализацией hashmap

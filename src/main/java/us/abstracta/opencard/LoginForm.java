@@ -2,10 +2,9 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import us.abstracta.opencard.params.HashData;
 
 public class LoginForm extends BaseClass {
-    HashData hashData = new HashData();
+
     private By emailField = By.xpath("//*[@id='input-email']");
     private By passwordField = By.xpath("//*[@id='input-password']");
     private By loginButton = By.xpath("//*[@value='Login']");
@@ -15,7 +14,7 @@ public class LoginForm extends BaseClass {
     }
 
     public LoginForm fillEmail() {
-        String email = hashData.getValue("email");
+        String email = myMap.get("email");
         sendCaseText(emailField, email);
         return this;
     }

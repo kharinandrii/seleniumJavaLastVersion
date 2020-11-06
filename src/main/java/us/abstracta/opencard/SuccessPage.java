@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import us.abstracta.opencard.params.Params;
 
+
+
 public class SuccessPage extends BaseClass {
     Params params = new Params();
     By successMessageH1 = By.xpath("//h1");
