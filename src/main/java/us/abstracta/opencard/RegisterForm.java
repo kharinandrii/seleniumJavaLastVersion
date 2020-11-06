@@ -2,25 +2,24 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import us.abstracta.opencard.params.HashData;
 import us.abstracta.opencard.params.Params;
 
 public class RegisterForm extends BaseClass {
-    private By firstNameField = By.xpath("//*[@id='input-firstname']");
-    private By lastNameField = By.xpath("//*[@id='input-lastname']");
-    private By emailField = By.xpath("//*[@id='input-email']");
-    private By phoneField = By.xpath("//*[@id='input-telephone']");
-    private By addressField = By.xpath("//*[@id='input-address-1']");
-    private By cityField = By.xpath("//*[@id='input-city']");
-    private By postcodeField = By.xpath("//*[@id='input-postcode']");
-    private By countrySelect = By.xpath("//*[@id='input-country']");
-    private By regionSelect = By.xpath("//*[@id='input-zone']");
-    private By passwordField = By.xpath("//*[@id='input-password']");
-    private By passwordConfirmField = By.xpath("//*[@id='input-confirm']");
-    private By checkbox = By.xpath("//*[@name='agree']");
-    private By buttonRegister = By.xpath("//*[@value='Continue']");
+    private final By firstNameField = By.xpath("//*[@id='input-firstname']");
+    private final By lastNameField = By.xpath("//*[@id='input-lastname']");
+    private final By emailField = By.xpath("//*[@id='input-email']");
+    private final By phoneField = By.xpath("//*[@id='input-telephone']");
+    private final By addressField = By.xpath("//*[@id='input-address-1']");
+    private final By cityField = By.xpath("//*[@id='input-city']");
+    private final By postcodeField = By.xpath("//*[@id='input-postcode']");
+    private final By countrySelect = By.xpath("//*[@id='input-country']");
+    private final By regionSelect = By.xpath("//*[@id='input-zone']");
+    private final By passwordField = By.xpath("//*[@id='input-password']");
+    private final By passwordConfirmField = By.xpath("//*[@id='input-confirm']");
+    private final By checkbox = By.xpath("//*[@name='agree']");
+    private final By buttonRegister = By.xpath("//*[@value='Continue']");
     Params params = new Params();
-    HashData hashData = new HashData();
+
 
     public RegisterForm(WebDriver driver) {
         super(driver);
@@ -29,20 +28,22 @@ public class RegisterForm extends BaseClass {
     public RegisterForm fillFirstName() {
         String name = getRandomFirstName();
         sendCaseText(firstNameField, name);
-        hashData.putValue("name", name);
+        myMap.put("name", name);
+
         return this;
     }
 
     public RegisterForm fillLastName() {
-        sendCaseText(lastNameField, getRandomLastName());
+        String lastName = getRandomLastName();
+        sendCaseText(lastNameField, lastName);
+        myMap.put("lastName", lastName);
         return this;
     }
 
     public RegisterForm fillEmail() {
-        String email = getRandomMail();
+        String email = myMap.get("name") + myMap.get("lastName") + "@test.tes";
         sendCaseText(emailField, email);
-        hashData.clearData()
-                .putValue("email", email);
+        myMap.put("email", email);
         return this;
     }
 
