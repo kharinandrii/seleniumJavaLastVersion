@@ -2,6 +2,8 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BaseClass {
     public WebDriver driver;
     public WebDriverWait wait;
+
     protected String BASEURL = "http://opencart.abstracta.us/";
     final Faker faker = new Faker(new Locale("en"));
     public static HashMap<String, String> myMap = new HashMap<String, String>();
@@ -26,6 +29,7 @@ public class BaseClass {
     public BaseClass(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 15);
+
     }
 
     public void waitVisibility(By elementBy) {
@@ -91,6 +95,16 @@ public class BaseClass {
 
     public String getText(By elementBy) {
         return  driver.findElement(elementBy).getText();
+    }
+
+    public  void moveMouseToElement(By element) {
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver.findElement(element)).build().perform();
+    }
+    public void clickOnElementUseActios(By elementBy) {
+        Actions builder = new Actions(driver);
+        moveMouseToElement(elementBy);
+        builder.click().build().perform();
     }
 
 }

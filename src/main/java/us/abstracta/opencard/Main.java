@@ -8,6 +8,8 @@ public class Main extends BaseClass {
     private By registerButton = By.xpath("//*[text()='Register']");
     private By loginButton = By.xpath("//*[text() = 'Login']");
     private By logOut = By.xpath("//*[text()='Logout']");
+    private By desktopMenu = By.xpath("//*[text() = 'Desktops']");
+    private By desktopLink = By.xpath("[//*[text() = 'Show All Desktops']");
     public Main(WebDriver driver) {
         super(driver);
     }
@@ -36,6 +38,16 @@ public class Main extends BaseClass {
 
     public Main clickOnLogout() {
         clickOnElement(logOut);
+        return this;
+    }
+
+    public Main moveToDesktop() {
+        moveMouseToElement(desktopMenu);
+        return this;
+    }
+
+    public Main openDesktopPage() {
+        clickOnElementUseActios(desktopLink);
         return this;
     }
 }

@@ -30,7 +30,7 @@ public class RegisterUserTest extends TestBase {
                 .clickOnContactLink();
         contactForm.fillNameField()
                 .fillEmailField()
-                .fillTextArea("hello world")
+                .fillTextArea()
                 .clickOnButton();
         main.openPage()
                 .openMenu()
@@ -40,5 +40,7 @@ public class RegisterUserTest extends TestBase {
         loginForm.fillEmail()
                 .fillPassword("demo1234")
                 .clickOnButton();
+        main.moveToDesktop()
+                .openDesktopPage();
     }
 }
