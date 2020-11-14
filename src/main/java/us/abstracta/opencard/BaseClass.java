@@ -99,14 +99,8 @@ public class BaseClass {
 
     public  void moveMouseToElement(By element) {
         Actions builder = new Actions(driver);
-        builder.moveToElement(driver.findElement(element)).build().perform();
+        builder.moveToElement(driver.findElement(element)).click().build().perform();
     }
-    public void clickOnElementUseActios(By elementBy) {
-        Actions builder = new Actions(driver);
-        moveMouseToElement(elementBy);
-        builder.click().build().perform();
-    }
-
 }
 
 

@@ -42,12 +42,12 @@ public class Main extends BaseClass {
     }
 
     public Main moveToDesktop() {
-        moveMouseToElement(desktopMenu);
+        clickOnElement(desktopMenu);
         return this;
     }
 
     public Main openDesktopPage() {
-        clickOnElementUseActios(desktopLink);
+        clickOnElement(desktopLink);
         return this;
     }
 }
