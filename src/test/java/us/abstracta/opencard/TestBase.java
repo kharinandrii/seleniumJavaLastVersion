@@ -1,11 +1,14 @@
 package us.abstracta.opencard;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
 import us.abstracta.opencard.params.Params;
 
 
@@ -23,7 +26,7 @@ public class TestBase {
     public  ContactForm contactForm;
 
 
-    @BeforeMethod
+    @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -39,7 +42,7 @@ public class TestBase {
     }
 
 
-    @AfterMethod
+    @AfterEach
     public void closeDriver() {
         driver.quit();
     }

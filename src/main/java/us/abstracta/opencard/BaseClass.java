@@ -6,13 +6,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
-import org.testng.Assert;
+
 
 
 import java.util.HashMap;
 import java.util.Locale;
 
-import static org.testng.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class BaseClass {
@@ -72,20 +73,20 @@ public class BaseClass {
     }
 
     public void elementIsSelected(By elementBy) {
-        Assert.assertTrue(driver.findElement(elementBy).isSelected());
+        assertTrue(driver.findElement(elementBy).isSelected());
     }
 
     public void equalsText(By elementBy, String expectedText) {
         String actualText = driver.findElement(elementBy).getText();
-        Assert.assertEquals(actualText, expectedText);
+        assertEquals(actualText, expectedText);
     }
 
     public void elementIsEnebled(By elementBy) {
-        Assert.assertTrue(driver.findElement(elementBy).isEnabled());
+        assertTrue(driver.findElement(elementBy).isEnabled());
     }
 
     public void elementIsDesebled(By elementBy) {
-        Assert.assertTrue(driver.findElement(elementBy).isDisplayed());
+        assertTrue(driver.findElement(elementBy).isDisplayed());
     }
 
     public String getText(By elementBy) {
