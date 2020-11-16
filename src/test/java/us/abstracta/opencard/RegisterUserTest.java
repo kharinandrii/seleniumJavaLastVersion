@@ -42,5 +42,7 @@ public class RegisterUserTest extends TestBase {
                 .clickOnButton();
         main.moveToDesktop()
                 .openDesktopPage();
+        desktopPage.checkTitle(params.desktopTitleText)
+                .openMacPage();
     }
 }

@@ -72,7 +72,6 @@ public class BaseClass {
     }
 
     public String getRandomAddress() {
-
         return faker.address().streetAddress();
     }
 
@@ -97,13 +96,16 @@ public class BaseClass {
         return  driver.findElement(elementBy).getText();
     }
 
-    public  void moveMouseToElement(By element) {
+    public  void moveMouseToElement(By elementBy) {
         Actions builder = new Actions(driver);
-        builder.moveToElement(driver.findElement(element)).click().build().perform();
+        builder.moveToElement(driver.findElement(elementBy)).click().build().perform();
+    }
+
+    public void findElements(By elementBy) {
+        driver.findElements(elementBy);
     }
 }
 
+//todo дописать тест добавив проверку массива єлементов и после єтого добавить товар в корзину для DesktopPage.class
 
-
-//TODO watch selenium-real-time-examplesinterview-questions/08 Selenium Webdriver-Techniques to automate Web elements
-// -> разобраться с реализацией hashmap
+//TODO watch https://www.youtube.com/watch?v=FRn5J31eAMw

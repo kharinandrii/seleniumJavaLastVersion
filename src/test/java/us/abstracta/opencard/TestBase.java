@@ -24,6 +24,7 @@ public class TestBase {
     public Params params;
     public SuccessPage successPage;
     public  ContactForm contactForm;
+    public DesktopPage desktopPage;
 
 
     @BeforeEach
@@ -39,6 +40,7 @@ public class TestBase {
         params = PageFactory.initElements(driver, Params.class);
         successPage = PageFactory.initElements(driver, SuccessPage.class);
         contactForm = PageFactory.initElements(driver, ContactForm.class);
+        desktopPage = PageFactory.initElements(driver, DesktopPage.class);
     }
 
 
