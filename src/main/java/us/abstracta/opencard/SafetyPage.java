@@ -13,7 +13,7 @@ public class SafetyPage extends BaseClass{
     }
 
     public SafetyPage clickOnAdvancedButton() {
-        clickOnElement(advancedButton);
+             clickOnElement(advancedButton);
         return this;
     }
     public SafetyPage clickOnProceedLink() {
@@ -21,3 +21,4 @@ public class SafetyPage extends BaseClass{
         return this;
     }
 }
+//todo если в дальнейшем не будет перебрасывать на сефти пейдж то удалить этот класс

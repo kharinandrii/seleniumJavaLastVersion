@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
 
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashMap;
 import java.util.Locale;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 
 public class BaseClass {
@@ -50,7 +50,7 @@ public class BaseClass {
 
     public void isElementPresent(By elementBy) {
         waitVisibility(elementBy);
-        assertTrue(driver.findElement(elementBy).isDisplayed());
+        assert (driver.findElement(elementBy).isDisplayed());
     }
 
     public void selectInDrobdown(By elementBy, String value) {
@@ -101,9 +101,6 @@ public class BaseClass {
         builder.moveToElement(driver.findElement(elementBy)).click().build().perform();
     }
 
-    public void findElements(By elementBy) {
-        driver.findElements(elementBy);
-    }
 }
 
 //todo дописать тест добавив проверку массива єлементов и после єтого добавить товар в корзину для DesktopPage.class

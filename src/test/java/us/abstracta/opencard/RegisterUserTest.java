@@ -9,8 +9,6 @@ public class RegisterUserTest extends TestBase {
         main.openPage()
                 .openMenu()
                 .clickOnRegisterButton();
-        safetyPage.clickOnAdvancedButton()
-                .clickOnProceedLink();
         registerForm.fillFirstName()
                 .fillLastName()
                 .fillEmail()

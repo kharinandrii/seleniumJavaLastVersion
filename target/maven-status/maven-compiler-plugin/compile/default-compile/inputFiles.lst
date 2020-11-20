@@ -1,0 +1,9 @@
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/Main.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/DesktopPage.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/params/Params.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/ContactForm.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/RegisterForm.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/LoginForm.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/BaseClass.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/SuccessPage.java
+/home/dark-qa/selenium_java/src/main/java/us/abstracta/opencard/SafetyPage.java
