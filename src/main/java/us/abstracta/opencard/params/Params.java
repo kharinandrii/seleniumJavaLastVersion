@@ -7,4 +7,5 @@ public class Params {
     final public String registerRegionValue = "3487";
     final public String password = "demo1234";
     final public String postCode = "73020";
+    final public String desktopTitleText = "Desktops";
 }

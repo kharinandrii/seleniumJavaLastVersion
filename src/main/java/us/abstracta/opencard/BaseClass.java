@@ -2,22 +2,26 @@ package us.abstracta.opencard;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
-import org.testng.Assert;
+
 
 
 import java.util.HashMap;
 import java.util.Locale;
 
-import static org.testng.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class BaseClass {
     public WebDriver driver;
     public WebDriverWait wait;
+
     protected String BASEURL = "http://opencart.abstracta.us/";
     final Faker faker = new Faker(new Locale("en"));
     public static HashMap<String, String> myMap = new HashMap<String, String>();
@@ -25,6 +29,7 @@ public class BaseClass {
     public BaseClass(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 15);
+
     }
 
     public void waitVisibility(By elementBy) {
@@ -67,34 +72,40 @@ public class BaseClass {
     }
 
     public String getRandomAddress() {
-
         return faker.address().streetAddress();
     }
 
     public void elementIsSelected(By elementBy) {
-        Assert.assertTrue(driver.findElement(elementBy).isSelected());
+        assertTrue(driver.findElement(elementBy).isSelected());
     }
 
     public void equalsText(By elementBy, String expectedText) {
         String actualText = driver.findElement(elementBy).getText();
-        Assert.assertEquals(actualText, expectedText);
+        assertEquals(actualText, expectedText);
     }
 
     public void elementIsEnebled(By elementBy) {
-        Assert.assertTrue(driver.findElement(elementBy).isEnabled());
+        assertTrue(driver.findElement(elementBy).isEnabled());
     }
 
     public void elementIsDesebled(By elementBy) {
-        Assert.assertTrue(driver.findElement(elementBy).isDisplayed());
+        assertTrue(driver.findElement(elementBy).isDisplayed());
     }
 
     public String getText(By elementBy) {
         return  driver.findElement(elementBy).getText();
     }
 
+    public  void moveMouseToElement(By elementBy) {
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver.findElement(elementBy)).click().build().perform();
+    }
+
+    public void findElements(By elementBy) {
+        driver.findElements(elementBy);
+    }
 }
 
+//todo дописать тест добавив проверку массива єлементов и после єтого добавить товар в корзину для DesktopPage.class
 
-
-//TODO watch selenium-real-time-examplesinterview-questions/08 Selenium Webdriver-Techniques to automate Web elements
-// -> разобраться с реализацией hashmap
+//TODO watch https://www.youtube.com/watch?v=FRn5J31eAMw

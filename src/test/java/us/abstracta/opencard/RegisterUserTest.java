@@ -1,6 +1,7 @@
 package us.abstracta.opencard;
 
-import org.testng.annotations.Test;
+
+import org.junit.jupiter.api.Test;
 
 public class RegisterUserTest extends TestBase {
     @Test
@@ -29,7 +30,7 @@ public class RegisterUserTest extends TestBase {
                 .clickOnContactLink();
         contactForm.fillNameField()
                 .fillEmailField()
-                .fillTextArea("hello world")
+                .fillTextArea()
                 .clickOnButton();
         main.openPage()
                 .openMenu()
@@ -39,5 +40,9 @@ public class RegisterUserTest extends TestBase {
         loginForm.fillEmail()
                 .fillPassword("demo1234")
                 .clickOnButton();
+        main.moveToDesktop()
+                .openDesktopPage();
+        desktopPage.checkTitle(params.desktopTitleText)
+                .openMacPage();
     }
 }

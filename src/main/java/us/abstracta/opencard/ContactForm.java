@@ -27,8 +27,8 @@ public class ContactForm extends BaseClass{
         }
         return this;
     }
-    public ContactForm fillTextArea(String text) {
-        sendCaseText(userTexeArea, text);
+    public ContactForm fillTextArea() {
+        sendCaseText(userTexeArea, "Hello, my name is " + myMap.get("name"));
         return this;
     }
 
