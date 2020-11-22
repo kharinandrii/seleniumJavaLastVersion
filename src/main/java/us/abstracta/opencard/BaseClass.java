@@ -106,3 +106,4 @@ public class BaseClass {
 //todo дописать тест добавив проверку массива єлементов и после єтого добавить товар в корзину для DesktopPage.class
 
 //TODO watch https://www.youtube.com/watch?v=FRn5J31eAMw
+//TODO добавить jankins в проект

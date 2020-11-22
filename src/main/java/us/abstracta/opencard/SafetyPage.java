@@ -21,4 +21,4 @@ public class SafetyPage extends BaseClass{
         return this;
     }
 }
-//todo если в дальнейшем не будет перебрасывать на сефти пейдж то удалить этот класс
+//todo если в дальнейшем не будет перебрасывать на сефти пейдж то удалить этот класс https://jeka.by/ask/165/bash-add-string-in-file/
