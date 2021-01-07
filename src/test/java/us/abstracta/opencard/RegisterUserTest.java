@@ -48,7 +48,8 @@ public class RegisterUserTest extends TestBase {
         main.moveToDesktop()
                 .openDesktopPage();
         desktopPage.checkTitle(params.desktopTitleText)
-                .openMacPage();
+                .openMacPage()
+                .clickOnCard();
     }
 
     @Feature("testing user login functions with correct data")

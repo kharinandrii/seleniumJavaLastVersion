@@ -28,4 +28,10 @@ public class DesktopPage extends BaseClass {
         clickOnElement(macCategory);
         return this;
     }
+    public DesktopPage clickOnCard() {
+        clickOnElement(cardTitle);
+        return this;
+    }
+    //TODO реализовать добавление товара в корзину
+
 }

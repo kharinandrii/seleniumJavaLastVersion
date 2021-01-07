@@ -8,14 +8,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
+//import org.testng.Assert;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashMap;
 import java.util.Locale;
 
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class BaseClass {
@@ -75,8 +75,7 @@ public class BaseClass {
         return faker.address().streetAddress();
     }
 
-    public void elementIsSelected(By elementBy) {
-        assertTrue(driver.findElement(elementBy).isSelected());
+    public void elementIsSelected(By elementBy) { assertTrue(driver.findElement(elementBy).isSelected());
     }
 
     public void equalsText(By elementBy, String expectedText) {
